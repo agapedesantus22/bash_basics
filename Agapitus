@@ -1,0 +1,20 @@
+prints your name from the command line
+prints a nice message of your choice
+use either while, do-while, for, or if statement to do some task of your choice
+
+@echo off
+First batch script
+echo Agapitus Iboro
+echo Hi this is my first batch script
+pause
+
+@echo off
+rem For each file in your folder
+for %%a in (".\*") do (
+rem check if the file has an extension and if it is not our script
+if "%%~xa" NEQ "" if "%%~dpxa" NEQ "%~dpx0" (
+rem check if extension folder exists, if not it is created
+if not exist "%%~xa" mkdir "%%~xa"
+rem Move the file to directory
+move "%%a" "%%~dpa%%~xa\"
+))
